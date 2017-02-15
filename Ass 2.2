@@ -1,0 +1,31 @@
+Explain in detail 
+    1.HDFS:
+           HDFS is Hadoop Distributed File System.
+           The primary objective of HDFS is to store data reliably even in the presence of failures including NameNode failures, DataNode failures and network partitions.
+           HDFS uses a master/slave architecture in which one device (the master) controls one or more other devices (the slaves). 
+           The HDFS cluster consists of a single NameNode and a master server manages the file system namespace and regulates access to files.
+           The file system is designed to be highly fault-tolerant, however, by facilitating the rapid transfer of data between compute nodes and enabling Hadoop systems to continue running if a node fails.
+           That decreases the risk of catastrophic failure, even in the event that numerous nodes fail.
+           When HDFS takes in data, it breaks the information down into separate pieces and distributes them to different nodes in a cluster, allowing for parallel processing. 
+           The file system also copies each piece of data multiple times and distributes the copies to individual nodes, placing at least one copy on a different server rack than the others.
+           As a result, the data on nodes that crash can be found elsewhere within a cluster, which allows processing to continue while the failure is resolved.
+     
+     2.Hadoop Cluster:
+           It is designed specifically for storing and analyzing huge amounts of unstructured data in a distributed computing environment.
+           Such clusters run Hadoop's open source distributed processing software on low-cost commodity computers. 
+           Typically one machine in the cluster is designated as the NameNode and as JobTracker.These are the masters.
+           The rest of the machines in the cluster act as both DataNode and TaskTracker and these are the slaves.
+           Hadoop clusters are often referred to as "shared nothing" systems because the only thing that is shared between nodes is the network that connects them.
+           If a cluster's processing power is overwhelmed by growing volumes of data, additional cluster nodes can be added to increase throughput.
+           
+     3.HDFS Blocks:
+           Hadoop distributed file system stores the data in terms of blocks. 
+           However the block size in HDFS is very large. 
+           The default size of HDFS block is 64MB. 
+           The files are split into 64MB blocks and then stored into the hadoop filesystem.
+           The hadoop application is responsible for distributing the data blocks across multiple nodes.
+           The blocks are of fixed size, so it is very easy to calculate the number of blocks that can be stored on a disk.
+           HDFS block concept simplifies the storage of the datanodes. The datanodes doesn’t need to concern about the blocks metadata data like file permissions etc.
+           The namenode maintains the metadata of all the blocks.
+           As the file is chunked into blocks, it is easy to store a file that is larger than the disk size as the data blocks are distributed and stored on multiple nodes in a hadoop cluster.
+           
